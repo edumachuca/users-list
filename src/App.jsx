@@ -3,8 +3,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
-  NavLink,
 } from "react-router-dom";
 import User from "./components/User";
 import UserList from "./components/UserList";
