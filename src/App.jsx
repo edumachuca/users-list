@@ -9,13 +9,15 @@ import UserList from "./components/UserList";
 import {ChakraProvider} from '@chakra-ui/react'
 
 
+
 function App() {
+  
+
+
   return (
     <ChakraProvider>
     <Router>
       <div className="container">
-        <h1>Hola</h1>
-        <hr />
         <Routes>
           <Route path="/"element={<UserList/>}/>
           <Route path="/users/:id"element={<User/>}/>

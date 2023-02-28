@@ -1,4 +1,5 @@
-import { Card, CardFooter, CardHeader, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Card, CardFooter, CardHeader, Heading, SimpleGrid, Button, useToast } from "@chakra-ui/react";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getUsers } from "../api/users";
@@ -16,31 +17,52 @@ const UserList = () => {
         console.log(err);
       });
   }, []);
+  
+  const toast = useToast()
+
+  const handleDelete = (id) => {
+    // We need to pass the id of the item we want to delete
+    axios
+      .delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+      .then(() => {
+        const newUsers = users.filter((user) => user.id !== id);
+        setUsers(newUsers);toast({
+          title: 'User successfully deleted',
+          status: 'success',
+          duration: 5000,
+          isClosable: true,
+        })
+      })
+      .catch((err) => toast({
+          title: error.message,
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
+}));
+  };
 
   return (
-    <div style={{
-      backgroundColor: 'lightblue',
-      width: '1000px',
-      height: '1000px'
-    }}>
+    <div>
       
       <h1>UserList</h1>
       <SimpleGrid minChildWidth='180px' spacing='40px'>
         {users.map((user) => (
-          <Card style={{
-            backgroundColor: 'aqua',
-            width: '240px',
-            height: '150px'
-            
-          }} color="tomato" key ={user.id}>
+          <Card key ={user.id}>
             <CardHeader>
 
             <Heading size='md'>{user.name}</Heading>
             </CardHeader>
-          <CardFooter color="black">
+          <CardFooter>
             <Link to={`/users/${user.id}`}>
-            See Details
+            <h1 style={{
+              margin: '10px',
+        width: '140px',
+        height: '20px'
+      }}>See details</h1>
             </Link>
+            <Button colorScheme='red' size='md' onClick={() => handleDelete (user.id)}>
+    Delete
+  </Button>
             </CardFooter>
             </Card>
         ))}
