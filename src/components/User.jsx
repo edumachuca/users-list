@@ -1,16 +1,21 @@
-import { Box, Card, CardBody, CardHeader, Heading, Stack, StackDivider, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Card,
+  CardBody,
+  CardHeader,
+  Flex,
+  Heading,
+  Stack,
+  StackDivider,
+  Text,
+} from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getUser } from "../api/users";
 
-
 const User = () => {
-
-   
-    const {id} = useParams()
-    console.log(id)
-
-    const [user, setUser] = useState([]);
+  const { id } = useParams();
+  const [user, setUser] = useState([]);
 
   useEffect(() => {
     getUser(id)
@@ -23,45 +28,44 @@ const User = () => {
       });
   }, [id]);
 
-return (
-    <div>
-<Card>
-  <CardHeader>
-    <Heading size='md'>{user.name}</Heading>
-  </CardHeader>
+  return (
+		<Flex h="full" justifyContent="center" itemsAlign="center" p={10}>
+			<Card w="full" m={10}>
+				<CardHeader>
+					<Heading size="md">{user.name}</Heading>
+				</CardHeader>
 
-  <CardBody>
-    <Stack divider={<StackDivider />} spacing='4'>
-      <Box>
-        <Heading size='xs' textTransform='uppercase'>
-          Username:
-        </Heading>
-        <Text pt='2' fontSize='sm'>
-          {user.username}
-        </Text>
-      </Box>
-      <Box>
-        <Heading size='xs' textTransform='uppercase'>
-          Email
-        </Heading>
-        <Text pt='2' fontSize='sm'>
-          {user.email}
-        </Text>
-      </Box>
-      <Box>
-        <Heading size='xs' textTransform='uppercase'>
-          Website
-        </Heading>
-        <Text pt='2' fontSize='sm'>
-         {user.website}
-        </Text>
-      </Box>
-    </Stack>
-  </CardBody>
-</Card>
-    </div>
-)
+				<CardBody>
+					<Stack divider={<StackDivider />} spacing="4">
+						<Box>
+							<Heading size="xs" textTransform="uppercase">
+								Username:
+							</Heading>
+							<Text pt="2" fontSize="sm">
+								{user.username}
+							</Text>
+						</Box>
+						<Box>
+							<Heading size="xs" textTransform="uppercase">
+								Email
+							</Heading>
+							<Text pt="2" fontSize="sm">
+								{user.email}
+							</Text>
+						</Box>
+						<Box>
+							<Heading size="xs" textTransform="uppercase">
+								Website
+							</Heading>
+							<Text pt="2" fontSize="sm">
+								{user.website}
+							</Text>
+						</Box>
+					</Stack>
+				</CardBody>
+			</Card>
+		</Flex>
+  );
+};
 
-}
-
-export default User
+export default User;
