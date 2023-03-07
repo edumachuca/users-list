@@ -1,8 +1,7 @@
 import { Card, CardFooter, CardHeader, Heading, SimpleGrid, Button, useToast, Box } from '@chakra-ui/react';
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getUsers } from '../api/users';
+import { deleteUser, getUsers } from '../api/users';
 
 const UserList = () => {
 	const [users, setUsers] = useState([]);
@@ -22,8 +21,7 @@ const UserList = () => {
 
 	const handleDelete = (id) => {
 		// We need to pass the id of the item we want to delete
-		axios
-			.delete(`https://jsonplaceholder.typicode.com/users/${id}`)
+		deleteUser(id)
 			.then(() => {
 				const newUsers = users.filter((user) => user.id !== id);
 				setUsers(newUsers);
