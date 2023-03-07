@@ -1,34 +1,24 @@
-import {
-  Box,
-  Card,
-  CardBody,
-  CardHeader,
-  Flex,
-  Heading,
-  Stack,
-  StackDivider,
-  Text,
-} from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getUser } from "../api/users";
+import { Box, Card, CardBody, CardHeader, Flex, Heading, Stack, StackDivider, Text } from '@chakra-ui/react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { getUser } from '../api/users';
 
 const User = () => {
-  const { id } = useParams();
-  const [user, setUser] = useState([]);
+	const { id } = useParams();
+	const [user, setUser] = useState([]);
 
-  useEffect(() => {
-    getUser(id)
-      .then((res) => {
-        console.log(res.data);
-        setUser(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [id]);
+	useEffect(() => {
+		getUser(id)
+			.then((res) => {
+				console.log(res.data);
+				setUser(res.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}, [id]);
 
-  return (
+	return (
 		<Flex h="full" justifyContent="center" itemsAlign="center" p={10}>
 			<Card w="full" m={10}>
 				<CardHeader>
@@ -65,7 +55,7 @@ const User = () => {
 				</CardBody>
 			</Card>
 		</Flex>
-  );
+	);
 };
 
 export default User;

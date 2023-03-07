@@ -9,21 +9,14 @@ import {
 	Button,
 	Heading,
 	Text,
-	useColorModeValue,
-	useToast
+	useColorModeValue
 } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
 import { useLogin } from '../hooks/useLogin';
-
-const { handleLogin } = useLogin();
 
 const Login = () => {
 	const [user, setUser] = useState('');
 	const [password, setPassword] = useState('');
-	const toast = useToast();
-	const navigate = useNavigate();
-
-	//const handleLogin = () => {
+	const handleLogin = useLogin();
 	//	if (user === USER && password === PASSWORD) {
 	//		navigate('/');
 	//	} else {

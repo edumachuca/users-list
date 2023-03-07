@@ -9,17 +9,17 @@ import { LoginProvider } from './hooks/useLogin';
 function App() {
 	return (
 		<LoginProvider>
-		<ChakraProvider>
-			<Box w="100%" p={10}>
-				<Router>
-					<Routes>
-						<Route path="/" element={<UserList />} />
-						<Route path="/users/:id" element={<User />} />
-						<Route path="/login" element={<Login />} />
-					</Routes>
-				</Router>
-			</Box>
-		</ChakraProvider>
+			<ChakraProvider>
+				<Box w="100%" p={10}>
+					<Router>
+						<Routes>
+							<Route path="/" element={<UserList />} />
+							<Route path="/users/:id" element={<User />} />
+							<Route path="/login" element={<Login />} />
+						</Routes>
+					</Router>
+				</Box>
+			</ChakraProvider>
 		</LoginProvider>
 	);
 }
