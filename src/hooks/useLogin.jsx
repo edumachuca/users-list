@@ -6,7 +6,10 @@ import PropTypes from 'prop-types';
 
 export const LoginProvider = ({ children }) => {
 	const [isAuthenticated, setIsAuthenticated] = useState(false);
-
+	useEffect(() => {
+		const authenticated = sessionStorage.getItem('isAuthenticated');
+		setIsAuthenticated(authenticated ? true : false);
+	}, []);
 	return <LoginContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>{children}</LoginContext.Provider>;
 };
 
@@ -18,7 +21,6 @@ const PASSWORD = 'admin';
 
 export const useLogin = () => {
 	const { isAuthenticated, setIsAuthenticated } = useContext(LoginContext);
-
 	const navigate = useNavigate();
 	const toast = useToast();
 	const handleLogin = (user, password) => {
@@ -40,11 +42,6 @@ export const useLogin = () => {
 		sessionStorage.removeItem('isAuthenticated');
 		setIsAuthenticated(false);
 	};
-
-	useEffect(() => {
-		const authenticated = sessionStorage.getItem('isAuthenticated');
-		setIsAuthenticated(authenticated ? true : false);
-	}, []);
 
 	return { isAuthenticated, handleLogin, handleLogout };
 };

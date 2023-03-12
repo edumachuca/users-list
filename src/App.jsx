@@ -5,6 +5,7 @@ import UserList from './components/UserList';
 import { Box, ChakraProvider } from '@chakra-ui/react';
 import Login from './components/Login';
 import { LoginProvider } from './hooks/useLogin';
+import { PrivateRoute } from './components/PrivateRoute';
 
 function App() {
 	return (
@@ -13,8 +14,22 @@ function App() {
 				<Box w="100%" p={10}>
 					<Router>
 						<Routes>
-							<Route path="/" element={<UserList />} />
-							<Route path="/users/:id" element={<User />} />
+							<Route
+								path="/"
+								element={
+									<PrivateRoute>
+										<UserList />
+									</PrivateRoute>
+								}
+							/>
+							<Route
+								path="/users/:id"
+								element={
+									<PrivateRoute>
+										<User />
+									</PrivateRoute>
+								}
+							/>
 							<Route path="/login" element={<Login />} />
 						</Routes>
 					</Router>

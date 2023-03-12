@@ -16,18 +16,7 @@ import { useLogin } from '../hooks/useLogin';
 const Login = () => {
 	const [user, setUser] = useState('');
 	const [password, setPassword] = useState('');
-	const handleLogin = useLogin();
-	//	if (user === USER && password === PASSWORD) {
-	//		navigate('/');
-	//	} else {
-	//		toast({
-	//			title: 'User or password are invalid',
-	//			status: 'error',
-	//			duration: 5000,
-	//			isClosable: true
-	///		});
-	//	}
-	//};
+	const { handleLogin } = useLogin();
 
 	return (
 		<Flex minH={'100vh'} align={'center'} justify={'center'} bg={useColorModeValue('gray.50', 'gray.800')}>
