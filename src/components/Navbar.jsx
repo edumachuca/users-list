@@ -1,6 +1,7 @@
-import React from "react";
+import React from 'react';
 import { Box, Flex, HStack, Link, IconButton, Button, useDisclosure, Stack } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+
 export default function Navbar() {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 

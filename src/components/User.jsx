@@ -2,6 +2,7 @@ import { Box, Card, CardBody, CardHeader, Flex, Heading, Stack, StackDivider, Te
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getUser } from '../api/users';
+import Navbar from './Navbar';
 
 const User = () => {
 	const { id } = useParams();
@@ -19,7 +20,8 @@ const User = () => {
 	}, [id]);
 
 	return (
-		<Navbar>
+		<>
+			<Navbar/>
 			<Flex h="full" justifyContent="center" itemsAlign="center" p={10}>
 				<Card w="full" m={10}>
 					<CardHeader>
@@ -56,7 +58,7 @@ const User = () => {
 					</CardBody>
 				</Card>
 			</Flex>
-		</Navbar>
+		</>
 	);
 };
 

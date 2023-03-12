@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .js,.jsx"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.17",
     "@chakra-ui/react": "^2.5.1",
     "@chakra-ui/theme": "^2.2.5",
     "@emotion/react": "^11.10.6",

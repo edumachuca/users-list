@@ -44,26 +44,27 @@ const UserList = () => {
 	};
 
 	return (
-		<Navbar>
-		<Box>
-			<Heading mb={5}>Users</Heading>
-			<SimpleGrid justifyContent="center" minChildWidth="180px" spacing="40px">
-				{users.map((user) => (
-					<Card key={user.id}>
-						<CardHeader>
-							<Heading size="md">{user.name}</Heading>
-						</CardHeader>
-						<CardFooter>
-							<Link to={`/users/${user.id}`}>See details</Link>
-							<Button ml={5} colorScheme="red" size="md" onClick={() => handleDelete(user.id)}>
-								Delete
-							</Button>
-						</CardFooter>
-					</Card>
-				))}
-			</SimpleGrid>
-		</Box>
-		</Navbar>
+		<>
+			<Navbar />
+			<Box>
+				<Heading mb={5}>Users</Heading>
+				<SimpleGrid justifyContent="center" minChildWidth="180px" spacing="40px">
+					{users.map((user) => (
+						<Card key={user.id}>
+							<CardHeader>
+								<Heading size="md">{user.name}</Heading>
+							</CardHeader>
+							<CardFooter>
+								<Link to={`/users/${user.id}`}>See details</Link>
+								<Button ml={5} colorScheme="red" size="md" onClick={() => handleDelete(user.id)}>
+									Delete
+								</Button>
+							</CardFooter>
+						</Card>
+					))}
+				</SimpleGrid>
+			</Box>
+		</>
 	);
 };
 
