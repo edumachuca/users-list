@@ -19,42 +19,44 @@ const User = () => {
 	}, [id]);
 
 	return (
-		<Flex h="full" justifyContent="center" itemsAlign="center" p={10}>
-			<Card w="full" m={10}>
-				<CardHeader>
-					<Heading size="md">{user.name}</Heading>
-				</CardHeader>
+		<Navbar>
+			<Flex h="full" justifyContent="center" itemsAlign="center" p={10}>
+				<Card w="full" m={10}>
+					<CardHeader>
+						<Heading size="md">{user.name}</Heading>
+					</CardHeader>
 
-				<CardBody>
-					<Stack divider={<StackDivider />} spacing="4">
-						<Box>
-							<Heading size="xs" textTransform="uppercase">
-								Username:
-							</Heading>
-							<Text pt="2" fontSize="sm">
-								{user.username}
-							</Text>
-						</Box>
-						<Box>
-							<Heading size="xs" textTransform="uppercase">
-								Email
-							</Heading>
-							<Text pt="2" fontSize="sm">
-								{user.email}
-							</Text>
-						</Box>
-						<Box>
-							<Heading size="xs" textTransform="uppercase">
-								Website
-							</Heading>
-							<Text pt="2" fontSize="sm">
-								{user.website}
-							</Text>
-						</Box>
-					</Stack>
-				</CardBody>
-			</Card>
-		</Flex>
+					<CardBody>
+						<Stack divider={<StackDivider />} spacing="4">
+							<Box>
+								<Heading size="xs" textTransform="uppercase">
+									Username:
+								</Heading>
+								<Text pt="2" fontSize="sm">
+									{user.username}
+								</Text>
+							</Box>
+							<Box>
+								<Heading size="xs" textTransform="uppercase">
+									Email
+								</Heading>
+								<Text pt="2" fontSize="sm">
+									{user.email}
+								</Text>
+							</Box>
+							<Box>
+								<Heading size="xs" textTransform="uppercase">
+									Website
+								</Heading>
+								<Text pt="2" fontSize="sm">
+									{user.website}
+								</Text>
+							</Box>
+						</Stack>
+					</CardBody>
+				</Card>
+			</Flex>
+		</Navbar>
 	);
 };
 

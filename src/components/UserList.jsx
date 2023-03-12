@@ -2,6 +2,7 @@ import { Card, CardFooter, CardHeader, Heading, SimpleGrid, Button, useToast, Bo
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { deleteUser, getUsers } from '../api/users';
+import Navbar from './Navbar';
 
 const UserList = () => {
 	const [users, setUsers] = useState([]);
@@ -43,6 +44,7 @@ const UserList = () => {
 	};
 
 	return (
+		<Navbar>
 		<Box>
 			<Heading mb={5}>Users</Heading>
 			<SimpleGrid justifyContent="center" minChildWidth="180px" spacing="40px">
@@ -61,6 +63,7 @@ const UserList = () => {
 				))}
 			</SimpleGrid>
 		</Box>
+		</Navbar>
 	);
 };
 
