@@ -3,6 +3,8 @@ import { useLogin } from '../hooks/useLogin';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+
+
 export function PrivateRoute({ children }) {
 	const { isAuthenticated } = useLogin();
 	if (!isAuthenticated) {
