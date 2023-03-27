@@ -1,6 +1,8 @@
 # users-list React
 
-![image](https://user-images.githubusercontent.com/115632127/228047600-faa36359-4150-4e34-9d91-7af0e34af028.png)
+![image](https://user-images.githubusercontent.com/115632127/228050177-c4ccdd19-597e-4652-bbd6-dfd72728b2d3.png)
+
+![image](https://user-images.githubusercontent.com/115632127/228050284-78e03bb4-7e43-4010-baf9-7cbdb5fe00c4.png)
 
 ## What is the use of this Repo
 
