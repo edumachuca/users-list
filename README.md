@@ -1,4 +1,4 @@
-# ToDoList React
+# users-list React
 
 ![image](https://user-images.githubusercontent.com/115632127/228047600-faa36359-4150-4e34-9d91-7af0e34af028.png)
 
