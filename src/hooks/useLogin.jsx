@@ -1,15 +1,12 @@
 import { useToast } from '@chakra-ui/react';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 const LoginContext = React.createContext();
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export const LoginProvider = ({ children }) => {
-	const [isAuthenticated, setIsAuthenticated] = useState(false);
-	useEffect(() => {
-		const authenticated = sessionStorage.getItem('isAuthenticated');
-		setIsAuthenticated(authenticated ? true : false);
-	}, []);
+	const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem('isAuthenticated') ? true : false);
+	
 	return <LoginContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>{children}</LoginContext.Provider>;
 };
 

@@ -17,7 +17,7 @@ export default function Navbar() {
 					onClick={isOpen ? onClose : onOpen}
 				/>
 				<HStack spacing={8} alignItems={'center'}>
-					<Box>Logo</Box>
+					<Box>Users list</Box>
 					<HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
 						<Link to="/">User List</Link>
 					</HStack>
