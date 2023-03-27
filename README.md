@@ -20,7 +20,7 @@ This project is a simple React project that demonstrates the following:
 ### Clone the project:
 
     git clone https://github.com/edumachuca/users-list
-    cd ToDoList
+    cd users-list
 
 ### Install the dependencies:
 
