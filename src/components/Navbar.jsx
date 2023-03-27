@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Flex, HStack, Link, IconButton, Button, useDisclosure, Stack } from '@chakra-ui/react';
+import { Box, Flex, HStack, IconButton, Button, useDisclosure, Stack } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { useLogin } from '../hooks/useLogin';
 
@@ -17,7 +18,6 @@ export default function Navbar() {
 					onClick={isOpen ? onClose : onOpen}
 				/>
 				<HStack spacing={8} alignItems={'center'}>
-					<Box>Users list</Box>
 					<HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
 						<Link to="/">User List</Link>
 					</HStack>
