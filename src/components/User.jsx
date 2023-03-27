@@ -21,7 +21,7 @@ const User = () => {
 
 	return (
 		<>
-			<Navbar/>
+			<Navbar />
 			<Flex h="full" justifyContent="center" itemsAlign="center" p={10}>
 				<Card w="full" m={10}>
 					<CardHeader>

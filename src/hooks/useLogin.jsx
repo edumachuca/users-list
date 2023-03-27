@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 export const LoginProvider = ({ children }) => {
 	const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem('isAuthenticated') ? true : false);
-	
+
 	return <LoginContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>{children}</LoginContext.Provider>;
 };
 
